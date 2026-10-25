@@ -13,6 +13,7 @@
   <a href="https://www.npmjs.com/package/dbmole-mcp"><img src="https://img.shields.io/npm/dm/dbmole-mcp" alt="npm downloads"></a>
   <a href="https://github.com/ed-smartass/dbmole-mcp/actions/workflows/ci.yml"><img src="https://github.com/ed-smartass/dbmole-mcp/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://github.com/ed-smartass/dbmole-mcp/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/dbmole-mcp" alt="MIT license"></a>
+  <a href="https://glama.ai/mcp/servers/ed-smartass/dbmole-mcp"><img src="https://glama.ai/mcp/servers/ed-smartass/dbmole-mcp/badges/score.svg" alt="Glama score"></a>
 </p>
 
 dbmole-mcp is a stdio [MCP](https://modelcontextprotocol.io) server. Tell your agent "connect
