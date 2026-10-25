@@ -1,0 +1,17 @@
+.git
+**/node_modules
+**/dist
+**/coverage
+**/test
+.remember
+.claude
+docs
+assets
+*.md
+*.tgz
+*.mcpb
+.superpowers
+.mcp.json
+**/.dbmole.json
+**/.esmole.json
+**/.env*

@@ -1,0 +1,32 @@
+{
+    "name": "dbmole-monorepo",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "workspaces": ["packages/*"],
+    "engines": { "node": ">=22" },
+    "scripts": {
+        "lint": "biome check packages/*/src packages/*/test scripts",
+        "lint:fix": "biome check --write packages/*/src packages/*/test scripts",
+        "typecheck": "npm run typecheck --workspaces --if-present",
+        "build": "npm run build --workspaces --if-present",
+        "test": "npm run test:unit",
+        "test:unit": "vitest run --project unit",
+        "test:int": "vitest run --project integration",
+        "test:all": "vitest run",
+        "coverage": "npm run coverage --workspaces --if-present",
+        "smoke": "npm run build && node scripts/smoke.mjs pack packages/*",
+        "docker:smoke": "node scripts/smoke.mjs docker packages/*-mcp",
+        "mcpb": "npm run build && node scripts/mcpb.mjs packages/*-mcp"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^2.4.16",
+        "@types/node": "^22.19.21",
+        "@vitest/coverage-v8": "^3.2.6",
+        "testcontainers": "^11.14.0",
+        "tsup": "^8.5.1",
+        "tsx": "^4.22.4",
+        "typescript": "^5.9.3",
+        "vitest": "^3.2.6"
+    }
+}

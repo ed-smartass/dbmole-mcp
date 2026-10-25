@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+*.tgz
+*.mcpb
+.dbmole.json
+.esmole.json
+packages/dbmole-mcp/README.md

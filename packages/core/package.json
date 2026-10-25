@@ -1,0 +1,41 @@
+{
+    "name": "@dbmole/core",
+    "version": "0.2.0",
+    "description": "Shared connection core of dbmole-mcp and esmole-mcp: project-file registry, SSH tunnels, pooled backends, MCP connection tools",
+    "license": "MIT",
+    "author": "Evgeny Gamov",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ed-smartass/dbmole-mcp.git",
+        "directory": "packages/core"
+    },
+    "homepage": "https://github.com/ed-smartass/dbmole-mcp/tree/main/packages/core#readme",
+    "bugs": { "url": "https://github.com/ed-smartass/dbmole-mcp/issues" },
+    "keywords": ["mcp", "model-context-protocol", "mcp-server", "ssh-tunnel"],
+    "type": "module",
+    "exports": {
+        ".": {
+            "@dbmole/source": "./src/index.ts",
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js"
+        }
+    },
+    "files": ["dist"],
+    "engines": { "node": ">=22" },
+    "publishConfig": { "access": "public" },
+    "scripts": {
+        "build": "tsup",
+        "typecheck": "tsc --noEmit",
+        "test:unit": "vitest run",
+        "coverage": "vitest run --coverage",
+        "prepublishOnly": "tsc --noEmit && vitest run && tsup"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.32.2",
+        "ssh2": "^1.17.0",
+        "zod": "^3.25.76"
+    },
+    "devDependencies": {
+        "@types/ssh2": "^1.15.5"
+    }
+}

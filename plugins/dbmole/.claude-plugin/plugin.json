@@ -1,0 +1,20 @@
+{
+    "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+    "name": "dbmole",
+    "version": "0.2.0",
+    "description": "PostgreSQL and MySQL MCP server: the agent adds and edits connections at runtime, SSH tunnels, TLS, readonly",
+    "author": {
+        "name": "Evgeny Gamov",
+        "url": "https://github.com/ed-smartass"
+    },
+    "homepage": "https://github.com/ed-smartass/dbmole-mcp",
+    "repository": "https://github.com/ed-smartass/dbmole-mcp",
+    "license": "MIT",
+    "keywords": ["postgres", "mysql", "database", "mcp"],
+    "mcpServers": {
+        "dbmole": {
+            "command": "npx",
+            "args": ["-y", "dbmole-mcp@0.2"]
+        }
+    }
+}

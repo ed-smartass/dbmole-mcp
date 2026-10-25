@@ -1,0 +1,67 @@
+{
+    "name": "dbmole-mcp",
+    "version": "0.2.0",
+    "description": "MCP server for PostgreSQL and MySQL: the agent adds and edits its own connections at runtime (per-project file, hot reload), SSH tunnels, TLS, readonly sessions",
+    "license": "MIT",
+    "author": "Evgeny Gamov",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ed-smartass/dbmole-mcp.git",
+        "directory": "packages/dbmole-mcp"
+    },
+    "homepage": "https://github.com/ed-smartass/dbmole-mcp#readme",
+    "keywords": [
+        "mcp",
+        "mcp-server",
+        "model-context-protocol",
+        "claude-code",
+        "codex",
+        "cursor",
+        "postgres",
+        "postgresql",
+        "mysql",
+        "sql",
+        "database",
+        "ssh-tunnel",
+        "ai-agents"
+    ],
+    "type": "module",
+    "bin": {
+        "dbmole-mcp": "dist/index.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "engines": {
+        "node": ">=22"
+    },
+    "scripts": {
+        "build": "tsup",
+        "dev": "tsx --conditions=@dbmole/source src/index.ts",
+        "typecheck": "tsc --noEmit",
+        "test:unit": "vitest run",
+        "coverage": "vitest run --coverage",
+        "prepublishOnly": "tsc --noEmit && vitest run && tsup",
+        "prepack": "cp ../../README.md README.md"
+    },
+    "dependencies": {
+        "@modelcontextprotocol/sdk": "^1.32.2",
+        "mysql2": "^3.24.6",
+        "pg": "^8.23.1",
+        "pg-cursor": "^2.22.1",
+        "ssh2": "^1.17.0",
+        "zod": "^3.25.76"
+    },
+    "devDependencies": {
+        "@dbmole/core": "*",
+        "@types/pg": "^8.23.1",
+        "@types/pg-cursor": "^2.7.2",
+        "@types/ssh2": "^1.15.5",
+        "@testcontainers/mysql": "^11.14.0",
+        "@testcontainers/postgresql": "^11.14.0"
+    },
+    "mcpName": "io.github.ed-smartass/dbmole-mcp",
+    "bugs": {
+        "url": "https://github.com/ed-smartass/dbmole-mcp/issues"
+    }
+}

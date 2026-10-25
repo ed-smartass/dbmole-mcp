@@ -1,0 +1,45 @@
+{
+    "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/mcpb/main/schemas/mcpb-manifest-v0.3.schema.json",
+    "manifest_version": "0.3",
+    "name": "dbmole-mcp",
+    "display_name": "dbmole",
+    "version": "0.2.0",
+    "description": "PostgreSQL and MySQL for agents that manage their own connections: add, edit and remove them at runtime, SSH tunnels, TLS, readonly.",
+    "author": {
+        "name": "Evgeny Gamov",
+        "url": "https://github.com/ed-smartass"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ed-smartass/dbmole-mcp.git"
+    },
+    "homepage": "https://github.com/ed-smartass/dbmole-mcp",
+    "documentation": "https://github.com/ed-smartass/dbmole-mcp#readme",
+    "support": "https://github.com/ed-smartass/dbmole-mcp/issues",
+    "icon": "icon.png",
+    "server": {
+        "type": "node",
+        "entry_point": "dist/index.js",
+        "mcp_config": {
+            "command": "node",
+            "args": ["${__dirname}/dist/index.js"]
+        }
+    },
+    "tools": [
+        { "name": "list_connections", "description": "List connections and where each one is defined" },
+        { "name": "add_connection", "description": "Add a connection to the project file or the global store" },
+        { "name": "update_connection", "description": "Patch a connection where it lives" },
+        { "name": "remove_connection", "description": "Remove a connection" },
+        { "name": "test_connection", "description": "Connect end to end and report server version and latency" },
+        { "name": "execute_sql", "description": "Run one SQL statement with positional parameters" },
+        { "name": "list_databases", "description": "List databases on the server" },
+        { "name": "list_tables", "description": "List tables and views" },
+        { "name": "describe_table", "description": "Describe the columns of a table" }
+    ],
+    "keywords": ["postgres", "postgresql", "mysql", "database", "sql", "ssh"],
+    "license": "MIT",
+    "compatibility": {
+        "platforms": ["darwin", "win32", "linux"],
+        "runtimes": { "node": ">=22.0.0" }
+    }
+}

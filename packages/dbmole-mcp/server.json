@@ -1,0 +1,29 @@
+{
+    "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+    "name": "io.github.ed-smartass/dbmole-mcp",
+    "title": "dbmole",
+    "description": "PostgreSQL and MySQL with connections managed at runtime by the agent, SSH tunnels, readonly.",
+    "websiteUrl": "https://github.com/ed-smartass/dbmole-mcp",
+    "repository": {
+        "url": "https://github.com/ed-smartass/dbmole-mcp",
+        "source": "github",
+        "subfolder": "packages/dbmole-mcp"
+    },
+    "icons": [
+        {
+            "src": "https://raw.githubusercontent.com/ed-smartass/dbmole-mcp/main/assets/dbmole-logo.png",
+            "mimeType": "image/png",
+            "sizes": ["1024x1024"]
+        }
+    ],
+    "version": "0.2.0",
+    "packages": [
+        {
+            "registryType": "npm",
+            "registryBaseUrl": "https://registry.npmjs.org",
+            "identifier": "dbmole-mcp",
+            "version": "0.2.0",
+            "transport": { "type": "stdio" }
+        }
+    ]
+}

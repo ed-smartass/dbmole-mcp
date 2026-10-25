@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+    "name": "dbmole",
+    "description": "dbmole-mcp: PostgreSQL and MySQL MCP server with runtime connection management",
+    "owner": {
+        "name": "Evgeny Gamov",
+        "url": "https://github.com/ed-smartass"
+    },
+    "plugins": [
+        {
+            "name": "dbmole",
+            "source": "./plugins/dbmole",
+            "description": "PostgreSQL and MySQL tools; the agent adds connections at runtime, SSH tunnels, readonly"
+        }
+    ]
+}

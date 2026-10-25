@@ -1,0 +1,45 @@
+name: Bug report
+description: Something does not work as documented
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Remove passwords, keys, API keys and host names you do not want
+        public before posting.
+  - type: input
+    id: version
+    attributes:
+      label: Server and version
+      placeholder: dbmole-mcp 0.2.0
+    validations:
+      required: true
+  - type: input
+    id: client
+    attributes:
+      label: MCP client and OS
+      placeholder: Claude Code 2.1 on macOS 15
+    validations:
+      required: true
+  - type: input
+    id: backend
+    attributes:
+      label: Database or cluster
+      placeholder: PostgreSQL 17 / MySQL 8.4 / Elasticsearch 8.15, direct or through SSH
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: The tool call (name and arguments), the result, and what you expected.
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+  - type: textarea
+    id: logs
+    attributes:
+      label: Server stderr
+      description: The server logs to stderr; most clients show it in their MCP log.
+      render: text
