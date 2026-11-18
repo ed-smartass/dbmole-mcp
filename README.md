@@ -99,7 +99,7 @@ The image is built from source:
 
 ```bash
 git clone https://github.com/ed-smartass/dbmole-mcp.git && cd dbmole-mcp
-docker build -f packages/dbmole-mcp/Dockerfile -t dbmole-mcp .
+docker build -t dbmole-mcp .
 ```
 
 ```json

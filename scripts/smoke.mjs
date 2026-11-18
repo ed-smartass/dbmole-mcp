@@ -1,6 +1,6 @@
 // Boot smoke test: the server must start over stdio and list exactly the expected tools.
 //   node scripts/smoke.mjs pack <packageDir...>    npm pack → install into an empty temp dir → boot
-//   node scripts/smoke.mjs docker <packageDir...>  docker build <packageDir>/Dockerfile → boot
+//   node scripts/smoke.mjs docker <packageDir...>  docker build ./Dockerfile → boot <packageDir>'s server
 //   node scripts/smoke.mjs run <dbmole|esmole> -- <command...>   boot any command (npx, node, ...)
 // Library packages (no `bin`, i.e. @dbmole/core) are installed and imported instead of booted.
 // Run from the repository root. Exits 1 on the first failure.
@@ -152,7 +152,7 @@ const packAndBoot = async (pkgDir) => {
 const dockerBoot = async (pkgDir) => {
     const pkg = readPkg(resolve(pkgDir))
     const tag = Object.keys(pkg.bin)[0] + ':smoke'
-    execFileSync('docker', ['build', '-q', '-f', join(pkgDir, 'Dockerfile'), '-t', tag, '.'], {
+    execFileSync('docker', ['build', '-q', '-t', tag, '.'], {
         stdio: 'inherit'
     })
     await listTools(serverOf(pkg), 'docker', ['run', '-i', '--rm', tag], { version: pkg.version })

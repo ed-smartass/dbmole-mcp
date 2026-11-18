@@ -1,5 +1,4 @@
-# Build from the repository root:
-#   docker build -f packages/dbmole-mcp/Dockerfile -t dbmole-mcp .
+# docker build -t dbmole-mcp .
 FROM node:22-alpine AS build
 WORKDIR /repo
 COPY . .
